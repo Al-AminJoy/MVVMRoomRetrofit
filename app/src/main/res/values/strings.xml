@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVM-Room-Retrofit</string>
+    <string name="loading">Loading</string>
+</resources>
