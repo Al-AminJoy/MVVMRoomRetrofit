@@ -1,4 +1,4 @@
-package com.alamin.mvvm_room_retrofit.adapter;
+package com.alamin.mvvm_room_retrofit.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,17 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alamin.mvvm_room_retrofit.R;
-import com.alamin.mvvm_room_retrofit.model.Posts;
+import com.alamin.mvvm_room_retrofit.service.model.Post;
+import com.alamin.mvvm_room_retrofit.service.viewHolder.PostViewHolder;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder>{
+public class PostAdapter extends RecyclerView.Adapter<PostViewHolder>{
 
     private Context context;
-    private List<Posts> postsList;
+    private List<Post> postsList;
 
-    public PostAdapter(Context context, List<Posts> postsList) {
+    public PostAdapter(Context context, List<Post> postsList) {
         this.context = context;
         this.postsList = postsList;
     }
@@ -29,12 +30,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @NonNull
     @Override
     public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new PostViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.each_row,parent,false));
+        return new PostViewHolder(LayoutInflater.from(context).inflate(R.layout.each_row,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
-        Posts posts=postsList.get(position);
+        Post posts=postsList.get(position);
         holder.id.setText("Id : " +posts.getId());
         holder.name.setText("Name : "+posts.getName());
         holder.age.setText("Age : "+posts.getAge());
@@ -48,22 +49,4 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         return postsList.size();
     }
 
-    public void getAllDatas(List<Posts> postsList)
-    {
-        this.postsList=postsList;
-    }
-
-    public static class PostViewHolder extends RecyclerView.ViewHolder
-    {
-        public TextView id,name,age;
-        public ImageView image;
-
-        public PostViewHolder(@NonNull View itemView) {
-            super(itemView);
-            id=itemView.findViewById(R.id.id);
-            name=itemView.findViewById(R.id.name);
-            image=itemView.findViewById(R.id.image);
-            age=itemView.findViewById(R.id.age);
-        }
-    }
 }
