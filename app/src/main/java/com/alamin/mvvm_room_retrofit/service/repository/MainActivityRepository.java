@@ -7,8 +7,8 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.alamin.mvvm_room_retrofit.service.dao.PostDao;
-import com.alamin.mvvm_room_retrofit.service.database.PostDatabase;
+import com.alamin.mvvm_room_retrofit.service.local.dao.PostDao;
+import com.alamin.mvvm_room_retrofit.service.local.database.PostDatabase;
 import com.alamin.mvvm_room_retrofit.service.model.Post;
 import com.alamin.mvvm_room_retrofit.service.model.Posts;
 import com.alamin.mvvm_room_retrofit.service.network.APIClient;
@@ -19,7 +19,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.POST;
 
 public class MainActivityRepository {
 

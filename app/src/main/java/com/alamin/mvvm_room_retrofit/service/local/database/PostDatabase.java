@@ -1,4 +1,4 @@
-package com.alamin.mvvm_room_retrofit.service.database;
+package com.alamin.mvvm_room_retrofit.service.local.database;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -9,9 +9,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.alamin.mvvm_room_retrofit.service.dao.PostDao;
+import com.alamin.mvvm_room_retrofit.service.local.dao.PostDao;
 import com.alamin.mvvm_room_retrofit.service.model.Post;
-import com.alamin.mvvm_room_retrofit.service.model.Posts;
 
 @Database(entities = {Post.class},version =1)
 public abstract class PostDatabase extends RoomDatabase {
