@@ -1,4 +1,4 @@
-package com.alamin.mvvm_room_retrofit.service.viewHolder;
+package com.alamin.mvvm_room_retrofit.view.viewHolder;
 
 import android.view.View;
 import android.widget.ImageView;
